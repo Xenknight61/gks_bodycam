@@ -30,7 +30,6 @@ AddEventHandler('onClientResourceStart', function(res)
   DoScreenFadeIn(300)
   if res == "gks_bodycam" then
     TriggerServerEvent('gks_bodycam:onPlayerLoaded', GetPlayerServerId(PlayerId()))
-    -- Try again in 2 minutes (Recovers bugged phone numbers)
     Citizen.Wait(120000)
     TriggerServerEvent('gks_bodycam:onPlayerLoaded', GetPlayerServerId(PlayerId()))
   end
@@ -61,7 +60,7 @@ AddEventHandler("gks_bodycam:meslek", function(_meslek)
 end)
 
 
-RegisterCommand('bodycamacqwdizsqiwiersais', function(source, args, raw)
+RegisterCommand('bodycamac', function(source, args, raw)
      if ESX.PlayerData.job.name == 'police' or ESX.PlayerData.job.name == 'ambulance' then
 
 	SendNUIMessage({show = true})
@@ -72,18 +71,12 @@ RegisterCommand('bodycamacqwdizsqiwiersais', function(source, args, raw)
 end)
 
 RegisterCommand('bodycamkapat', function(source, args, raw)
-     if ESX.PlayerData.job.name == 'police' then
-    
-	SendNUIMessage({show = false})
-	
-	else
-		TriggerEvent('notification', 'Yetkiniz yok!', 1)
-	end
+	SendNUIMessage({show = false})	
 end)
 
 RegisterNetEvent('bodycam:use')
 AddEventHandler('bodycam:use', function(prop_name)
-  ExecuteCommand('bodycamacqwdizsqiwiersais')
+  ExecuteCommand('bodycamac')
 end)
 
 
