@@ -54,9 +54,8 @@ AddEventHandler("gks_bodycam:lastname", function(_lastname)
 end)
 
 RegisterNetEvent("gks_bodycam:meslek")
-AddEventHandler("gks_bodycam:meslek", function(_meslek)
-  meslek = _meslek
-  SendNUIMessage({event = 'updateMyMeslek', meslek = ESX.PlayerData.job.grade_label})
+AddEventHandler("gks_bodycam:meslek", function(meslek)
+  SendNUIMessage({event = 'updateMyMeslek', meslek = meslek})
 end)
 
 
