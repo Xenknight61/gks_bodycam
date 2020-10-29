@@ -1,4 +1,7 @@
 # gks_bodycam
+
+discord : https://discord.gg/XUck63E
+
 Police Bodycam                          
 ![alt text](https://cdn.discordapp.com/attachments/731994183426113626/767091630392999987/bodycam.png)
 
@@ -8,4 +11,3 @@ EMS Bodycam
 
 ![alt text](https://cdn.discordapp.com/attachments/731994183426113626/767091759317647440/unknown.png)
 
-discord : https://discord.gg/XUck63E
