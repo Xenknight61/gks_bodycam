@@ -63,11 +63,18 @@ AddEventHandler('gks_bodycam:onPlayerLoaded',function(source)
 	local fst = getFirstname(identifier)
 	local lst = getLastname(identifier)
 	local mslk = getMeslek(identifier)
+	
 	TriggerClientEvent("gks_bodycam:firstname", sourcePlayer, fst)
 	TriggerClientEvent("gks_bodycam:lastname", sourcePlayer, lst)
-    TriggerClientEvent("gks_bodycam:meslek", sourcePlayer)
 	TriggerClientEvent("gks_bodycam:mesleka", sourcePlayer, mslk)
+	
+	local xPlayers = ESX.GetPlayers()
+	local xPlayer = ESX.GetPlayerFromId(sourcePlayer)
+	if xPlayer ~= nil then
+	  TriggerClientEvent("gks_bodycam:meslek", sourcePlayer, xPlayer.job.grade_label)
+	end
 end)
+
 
 
 ESX.RegisterUsableItem('bodycam', function(source)
